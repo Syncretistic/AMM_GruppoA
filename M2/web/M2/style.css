@@ -17,7 +17,7 @@ body {
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
-h1,h2,h3,th {
+h1,h2,h3,th,nav {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -33,6 +33,10 @@ h3 {
     font-size: 1.5em;
 }
 
+nav {
+    font-size:1.5em;
+}
+
 a {
     text-decoration: underline;
     color: #FFFFFF;
@@ -40,4 +44,27 @@ a {
 
 a:hover, a:active {
     color: #BBBBBB;
+}
+
+input[type=text],
+input[type=url],
+input[type=number],
+textarea {
+   width: 70%;
+   padding: 5px;
+   background-color: #EEEEEE;
+   border-radius: 5px;
+   border: 2px solid #888888;
+   margin: 0px 0px 20px 10px;
+   position: relative;
+}
+
+form {
+    width:600px;
+}
+label {
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: right;
 }
