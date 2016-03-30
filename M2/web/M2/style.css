@@ -17,7 +17,7 @@ body {
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
-h1,h2,h3,th,nav {
+h1,h2,h3,th,nav,.sidebar {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -35,6 +35,10 @@ h3 {
 
 nav {
     font-size:1.5em;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-image: url("./img/tweed.png");
 }
 
 a {
@@ -67,4 +71,31 @@ label {
     float: left;
     width: 25%;
     text-align: right;
+}
+table {
+    width:80%;
+    text-align:center;
+    border-spacing: 10px;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.sidebar {
+    float: left;
+    width: 20%; 
+}
+
+
+ul {
+    list-style: none;
+    margin: 0 0 0 5px;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+td {
+    width: 250px;
+    float: left;
+    display: inline;
 }
