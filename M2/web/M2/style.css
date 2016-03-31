@@ -7,6 +7,61 @@ and open the template in the editor.
     Created on : 25-mar-2016, 18.44.04
     Author     : Saverio
 */
+@media all and (max-width: 600px) {
+    td {
+        width: 80%;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    li {
+        display: inline;
+        float: left;
+        padding: 5px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        float: none;
+    }
+}
+@media all and (min-width: 600px) {
+    .sidebar {
+        float: left;
+        width: 15%; 
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    table {
+        width: 80%;
+        }
+}
+
+@media all and (min-width: 600px) and (max-width: 1024px) {
+    td {
+        width: 45%;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    td {
+        width: 33%;
+    }
+}
+@media all and (min-width: 1280px){
+    td {
+        width: 24%;
+    }
+}
 @font-face {
     font-family: Futura;
     src: url(./font/Futura-Condensed-Normal.woff);
@@ -73,17 +128,8 @@ label {
     text-align: right;
 }
 table {
-    width:80%;
     text-align:center;
-    border-spacing: 10px;
-}
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-.sidebar {
-    float: left;
-    width: 20%; 
+    border-spacing: 20px;
 }
 
 
@@ -95,7 +141,6 @@ ul {
 }
 
 td {
-    width: 250px;
-    float: left;
-    display: inline;
+    height: 350px;
+    float:left;
 }

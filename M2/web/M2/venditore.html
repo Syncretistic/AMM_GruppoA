@@ -24,20 +24,14 @@ and open the template in the editor.
         <form method="get">
             <label for="itemname">Nome Articolo: </label>
             <input id="itemname" type="text" name="itemname">
-            <br />
             <label for="itemimg">Immagine: </label>
             <input id="itemimg" type="url" name="itemimg">
-            <br />
             <label for="itemdesc">Descrizione: </label>
             <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
-            <br />
             <label for="itemprice">Prezzo: </label>
-            <input id="itemprice" type="number" name="itemprice">
-            <br />
+            <input id="itemprice" type="number" min="0.01" name="itemprice">
             <label for="itemnum">Quantità: </label>
-            <input id="itemnum" type="number" name="itemnum">
-            <br />
-            <input type="submit" value="Submit">
+            <input id="itemnum" type="number" min="1" step="1" name="itemnum">
         </form>
     </body>
 </html>
