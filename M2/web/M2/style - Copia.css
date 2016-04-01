@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : Saverio
 */
 @media all and (max-width: 600px) {
-
+    td {
+        width: 80%;
+    }
+    
     .container {
         width: 100%;
     }
@@ -43,6 +46,22 @@ and open the template in the editor.
         }
 }
 
+@media all and (min-width: 600px) and (max-width: 1024px) {
+    td {
+        width: 45%;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    td {
+        width: 33%;
+    }
+}
+@media all and (min-width: 1280px){
+    td {
+        width: 24%;
+    }
+}
 @font-face {
     font-family: Futura;
     src: url(./font/Futura-Condensed-Normal.woff);
@@ -73,6 +92,13 @@ h4 {
     font-size: 1.3em;
 }
 
+.griditem {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  margin: 20px auto;
+}
 
 nav {
     font-size:1.5em;
@@ -116,12 +142,9 @@ label {
 table {
     text-align: center;
     border-spacing: 20px;
-    border: 1px solid white;
 }
 
-td {
-    border: 1px solid red;
-}
+
 ul {
     list-style: none;
     margin: 0 0 0 5px;
@@ -129,6 +152,10 @@ ul {
     font-size: 1.2em;
 }
 
+td {
+    height: 350px;
+    float:left;
+}
 
 .itemattr {
     padding: 3px 0px 3px 0px;
