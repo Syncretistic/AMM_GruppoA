@@ -72,7 +72,7 @@ body {
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
-h1,h2,h3,th,nav,.sidebar {
+h1,h2,h3,h4,nav,.sidebar, .buybtn {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -86,6 +86,18 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+.griditem {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  margin: 20px auto;
 }
 
 nav {
@@ -128,7 +140,7 @@ label {
     text-align: right;
 }
 table {
-    text-align:center;
+    text-align: center;
     border-spacing: 20px;
 }
 
@@ -144,3 +156,27 @@ td {
     height: 350px;
     float:left;
 }
+
+.itemattr {
+    padding: 3px 0px 3px 0px;
+}
+
+.buybtn {
+    background-color: #EEEEEE;
+    border:none;
+    padding:10px;
+    border-radius:3px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #222222;
+    display:block;
+    margin:3px auto;
+    width:150px;
+}
+
+.buybtn:hover {
+    border: 1px #EEEEEE solid;
+    background-color: #222222;
+    color: #EEEEEE;
+}
+
