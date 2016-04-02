@@ -49,8 +49,9 @@
     }
     
     ul.menu li {
-        float: left;
-        padding: 0px 10px 0px 20px;
+        display: inline;
+        padding: 0px 20px 0px 20px;
+        margin: 0px;
     }
 }
 
@@ -175,3 +176,14 @@ ul.sidebar li {
     color: #EEEEEE;
 }
 
+body.cliente ul.menu li.cliente, 
+body.cliente ul.menu li.cliente a, 
+body.login ul.menu li.login,
+body.login ul.menu li.login a,
+body.venditore ul.menu li.venditore,
+body.venditore ul.menu li.venditore a,
+body.descrizione ul.menu li.descrizione,
+body.descrizione ul.menu li.descrizione a {
+    background-color: #EEEEEE;
+    color: #222222;
+}
