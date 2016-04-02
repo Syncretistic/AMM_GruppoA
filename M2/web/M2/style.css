@@ -1,14 +1,11 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 25-mar-2016, 18.44.04
-    Author     : Saverio
-*/
-@media all and (max-width: 600px) {
 
+@media all and (max-width: 480px) {
+    body {
+        text-align:center;
+    }
+    .features {
+        text-align: left;
+    }
     .container {
         width: 100%;
     }
@@ -17,18 +14,23 @@ and open the template in the editor.
         width: 100%;
     }
     
-    li {
-        display: inline;
-        float: left;
-        padding: 5px;
+    ul.sidebar li, ul.menu li{
+        display:table-cell;
+        text-align: center;
+        width: 25%;
+        float: none;
+        padding: 0px;
     }
     
-    .sidebar {
+    ul.sidebar, ul.menu{
+        display:table;
         width: 100%;
         float: none;
+        padding: 0px;
     }
+
 }
-@media all and (min-width: 600px) {
+@media all and (min-width: 480px) {
     .sidebar {
         float: left;
         width: 15%; 
@@ -39,8 +41,17 @@ and open the template in the editor.
         margin: 0 auto;
     }
     table {
-        width: 80%;
+        width: 75%;
         }
+    
+    ul.menu {
+        padding: 5px 0px 5px 4%;
+    }
+    
+    ul.menu li {
+        float: left;
+        padding: 0px 10px 0px 20px;
+    }
 }
 
 @font-face {
@@ -53,7 +64,7 @@ body {
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
-h1,h2,h3,h4,nav,.sidebar, .buybtn {
+h1,h2,h3,h4,.menu, .sidebar , .buybtn {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -74,13 +85,17 @@ h4 {
 }
 
 
-nav {
+ul.menu {
     font-size:1.5em;
     position: fixed;
     top: 0px;
     width: 100%;
     background-image: url("./img/tweed.png");
+    list-style: none;
+    margin: 0 auto;
+    border-bottom: 1px solid #555555;
 }
+
 
 a {
     text-decoration: underline;
@@ -116,22 +131,29 @@ label {
 table {
     text-align: center;
     border-spacing: 20px;
-    border: 1px solid white;
+    border-collapse: collapse;
+}
+tr:nth-child(odd) {
+  background: rgba(255, 255, 255, .1);  
 }
 
 td {
-    border: 1px solid red;
+    padding-bottom:20px;
 }
-ul {
+ul.sidebar {
     list-style: none;
-    margin: 0 0 0 5px;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0px;
     font-size: 1.2em;
+}
+
+ul.sidebar li {
+        padding-bottom:10px;
 }
 
 
 .itemattr {
-    padding: 3px 0px 3px 0px;
+    padding: 40px 10px 0px 10px;
 }
 
 .buybtn {
@@ -143,8 +165,8 @@ ul {
     text-decoration: none;
     color: #222222;
     display:block;
-    margin:3px auto;
-    width:150px;
+    margin:40px auto 0px auto;
+    width:100px;
 }
 
 .buybtn:hover {

@@ -15,23 +15,27 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <nav>
-            <a href="descrizione.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
-        <h1>Vendi su Tonino Shop</h1>
-        <h2>Inserisci il tuo annuncio</h2>
-        <form method="get">
-            <label for="itemname">Nome Articolo: </label>
-            <input id="itemname" type="text" name="itemname">
-            <label for="itemimg">Immagine: </label>
-            <input id="itemimg" type="url" name="itemimg">
-            <label for="itemdesc">Descrizione: </label>
-            <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
-            <label for="itemprice">Prezzo: </label>
-            <input id="itemprice" type="number" min="0.01" name="itemprice">
-            <label for="itemnum">Quantità: </label>
-            <input id="itemnum" type="number" min="1" step="1" name="itemnum">
-        </form>
+            <ul class="menu">
+                <li><a href="descrizione.html">Home</a></li>
+                <li><a href="cliente.html">Compra</a></li>
+                <li><a href="venditore.html">Vendi</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="container">
+                <h1>Vendi su Tonino Shop</h1>
+                <h2>Inserisci il tuo annuncio</h2>
+                <form method="get">
+                    <label for="itemname">Nome Articolo: </label>
+                    <input id="itemname" type="text" name="itemname">
+                    <label for="itemimg">Immagine (url) : </label>
+                    <input id="itemimg" type="url" name="itemimg">
+                    <label for="itemdesc">Descrizione: </label>
+                    <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
+                    <label for="itemprice">Prezzo: </label>
+                    <input id="itemprice" type="number" min="0.01" name="itemprice">
+                    <label for="itemnum">Quantità: </label>
+                    <input id="itemnum" type="number" min="1" step="1" name="itemnum">
+                </form>
+            </div>
     </body>
 </html>
