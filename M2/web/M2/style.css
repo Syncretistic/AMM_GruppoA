@@ -1,7 +1,6 @@
-
 @media all and (max-width: 480px) {
     body {
-        text-align:center;
+        text-align: center;
     }
     .features {
         text-align: left;
@@ -9,85 +8,91 @@
     .container {
         width: 100%;
     }
-    
     table {
         width: 100%;
     }
-    
-    ul.sidebar li, ul.menu li{
-        display:table-cell;
+    ul.sidebar li,
+    ul.menu li {
+        display: table-cell;
         text-align: center;
         width: 25%;
         float: none;
         padding: 0px;
+        margin: 0px;
     }
-    
-    ul.sidebar, ul.menu{
-        display:table;
+    ul.sidebar,
+    ul.menu {
+        display: table;
         width: 100%;
         float: none;
         padding: 0px;
+    }
+    td {
+        float: left;
+        width: 100%;
+    }
+    td.itemattr {
+        padding: 5px;
+    }
+    a.buybtn {
+        margin: 15px auto 5px auto;
     }
 
 }
 @media all and (min-width: 480px) {
     .sidebar {
         float: left;
-        width: 15%; 
+        width: 15%;
     }
-
     .container {
         width: 90%;
         margin: 0 auto;
     }
     table {
         width: 75%;
-        }
-    
+    }
     ul.menu {
         padding: 5px 0px 5px 4%;
     }
-    
     ul.menu li {
         display: inline;
         padding: 0px 20px 0px 20px;
         margin: 0px;
     }
 }
-
 @font-face {
     font-family: Futura;
     src: url(./font/Futura-Condensed-Normal.woff);
 }
-
 body {
     background-image: url("./img/tweed.png");
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
-h1,h2,h3,h4,.menu, .sidebar , .buybtn {
+h1,
+h2,
+h3,
+h4,
+.menu,
+.sidebar,
+.buybtn {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
 h1 {
     font-size: 4.5em;
 }
-
 h2 {
     font-size: 2.5em;
 }
-
 h3 {
     font-size: 1.5em;
 }
-
 h4 {
     font-size: 1.3em;
 }
-
-
 ul.menu {
-    font-size:1.5em;
+    font-size: 1.5em;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -96,32 +101,28 @@ ul.menu {
     margin: 0 auto;
     border-bottom: 1px solid #555555;
 }
-
-
 a {
     text-decoration: underline;
     color: #FFFFFF;
 }
-
-a:hover, a:active {
+a:hover,
+a:active {
     color: #BBBBBB;
 }
-
 input[type=text],
 input[type=url],
 input[type=number],
 textarea {
-   width: 70%;
-   padding: 5px;
-   background-color: #EEEEEE;
-   border-radius: 5px;
-   border: 2px solid #888888;
-   margin: 0px 0px 20px 10px;
-   position: relative;
+    width: 70%;
+    padding: 5px;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    border: 2px solid #888888;
+    margin: 0px 0px 20px 10px;
+    position: relative;
 }
-
 form {
-    width:600px;
+    width: 600px;
 }
 label {
     display: block;
@@ -135,11 +136,10 @@ table {
     border-collapse: collapse;
 }
 tr:nth-child(odd) {
-  background: rgba(255, 255, 255, .1);  
+    background: rgba(255, 255, 255, .1);
 }
-
 td {
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 ul.sidebar {
     list-style: none;
@@ -147,37 +147,31 @@ ul.sidebar {
     padding: 0px;
     font-size: 1.2em;
 }
-
 ul.sidebar li {
-        padding-bottom:10px;
+    padding-bottom: 10px;
 }
-
-
 .itemattr {
     padding: 40px 10px 0px 10px;
 }
-
 .buybtn {
     background-color: #EEEEEE;
-    border:none;
-    padding:10px;
-    border-radius:3px;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
     font-size: 1.2em;
     text-decoration: none;
     color: #222222;
-    display:block;
-    margin:40px auto 0px auto;
-    width:100px;
+    display: block;
+    margin: 40px auto 0px auto;
+    width: 100px;
 }
-
 .buybtn:hover {
     border: 1px #EEEEEE solid;
     background-color: #222222;
     color: #EEEEEE;
 }
-
-body.cliente ul.menu li.cliente, 
-body.cliente ul.menu li.cliente a, 
+body.cliente ul.menu li.cliente,
+body.cliente ul.menu li.cliente a,
 body.login ul.menu li.login,
 body.login ul.menu li.login a,
 body.venditore ul.menu li.venditore,
@@ -186,4 +180,13 @@ body.descrizione ul.menu li.descrizione,
 body.descrizione ul.menu li.descrizione a {
     background-color: #EEEEEE;
     color: #222222;
+}
+
+td h4 {
+  display: block;
+  margin: 20px auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
