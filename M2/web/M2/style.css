@@ -19,7 +19,7 @@
         width: 90%;
     }
     
-    ul.sidebar li,
+    .sidebar li,
     ul.menu li {
         display: table-cell;
         text-align: center;
@@ -27,8 +27,9 @@
         float: none;
         padding: 0px;
         margin: 0px;
+        
     }
-    ul.sidebar,
+    .sidebar ul,
     ul.menu {
         display: table;
         width: 100%;
@@ -45,9 +46,15 @@
     a.btn-std {
         margin: 15px auto 5px auto;
     }
+    .greysb {
+        margin: 10px auto;
+        padding: 10px 0px 10px 0px;
+        background: rgba(255, 255, 255, .1);
+    }
 
 }
 @media all and (min-width: 480px) {
+    
     .loginform {
         text-align: center;
         width: 480px;
@@ -79,7 +86,7 @@
     }
     .sidebar {
         float: left;
-        width: 15%;
+        width: 20%;
     }
     .container {
         width: 90%;
@@ -183,13 +190,13 @@ tr:nth-child(odd) {
 td {
     padding-bottom: 20px;
 }
-ul.sidebar {
+.sidebar ul {
     list-style: none;
     margin: 0 auto;
     padding: 0px;
     font-size: 1.2em;
 }
-ul.sidebar li {
+.sidebar li {
     padding-bottom: 10px;
 }
 .itemattr {
@@ -234,4 +241,7 @@ td h4 {
   max-width: 250px;
 }
 
-
+.greybg  {
+    padding: 10px 0px 10px 0px;
+    background: rgba(255, 255, 255, .1);
+}
