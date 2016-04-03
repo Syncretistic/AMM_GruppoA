@@ -11,6 +11,14 @@
     table {
         width: 100%;
     }
+    input[type=text],
+    input[type=url],
+    input[type=number],
+    input[type=password],
+    textarea {
+        width: 90%;
+    }
+    
     ul.sidebar li,
     ul.menu li {
         display: table-cell;
@@ -34,12 +42,41 @@
     td.itemattr {
         padding: 5px;
     }
-    a.buybtn {
+    a.btn-std {
         margin: 15px auto 5px auto;
     }
 
 }
 @media all and (min-width: 480px) {
+    .loginform {
+        text-align: center;
+        width: 480px;
+        margin: 0 auto;
+    }
+    .sellerform {
+        width: 700px;
+        text-align: left;
+    }
+    label {
+        width: 30%;
+    }
+    input[type=text],
+    input[type=url],
+    input[type=number],
+    input[type=password],
+    textarea {
+        margin-left: 5px;
+        width: 75%;
+        float: right;
+    }
+    
+    .input-wrap {
+        text-align: left;
+        margin-bottom: 40px;
+        width: 100%;
+        display: block;
+        float: left;
+    }
     .sidebar {
         float: left;
         width: 15%;
@@ -73,9 +110,10 @@ h1,
 h2,
 h3,
 h4,
+label,
 .menu,
 .sidebar,
-.buybtn {
+.btn-std {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -92,7 +130,7 @@ h4 {
     font-size: 1.3em;
 }
 ul.menu {
-    font-size: 1.5em;
+    font-size: 1.8em;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -112,24 +150,28 @@ a:active {
 input[type=text],
 input[type=url],
 input[type=number],
+input[type=password],
 textarea {
-    width: 70%;
+    font-size: 1.2em;
     padding: 5px;
-    background-color: #EEEEEE;
+    color: #EEEEEE;
+    background: none;
     border-radius: 5px;
     border: 2px solid #888888;
-    margin: 0px 0px 20px 10px;
-    position: relative;
 }
-form {
-    width: 600px;
-}
+
+input[type=text]:focus,
+input[type=url]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+textarea:focus {
+        border: 2px solid #EEEEEE;
+        outline: none;
+    }
 label {
-    display: block;
-    float: left;
-    width: 25%;
-    text-align: right;
+    font-size: 1.5em;
 }
+
 table {
     text-align: center;
     border-spacing: 20px;
@@ -153,7 +195,8 @@ ul.sidebar li {
 .itemattr {
     padding: 40px 10px 0px 10px;
 }
-.buybtn {
+
+.btn-std {
     background-color: #EEEEEE;
     border: none;
     padding: 10px;
@@ -165,7 +208,7 @@ ul.sidebar li {
     margin: 40px auto 0px auto;
     width: 100px;
 }
-.buybtn:hover {
+.btn-std:hover {
     border: 1px #EEEEEE solid;
     background-color: #222222;
     color: #EEEEEE;
@@ -190,3 +233,5 @@ td h4 {
   text-overflow: ellipsis;
   max-width: 250px;
 }
+
+

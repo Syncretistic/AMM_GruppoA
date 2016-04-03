@@ -23,19 +23,31 @@ and open the template in the editor.
             </ul>
             <div class="container">
                 <h1>Vendi su Tonino Shop</h1>
+                <div class="sellerform">
                 <h2>Inserisci il tuo annuncio</h2>
                 <form method="get">
+                    <div class="input-wrap">
                     <label for="itemname">Nome Articolo: </label>
                     <input id="itemname" type="text" name="itemname">
+                    </div>
+                    <div class="input-wrap">
                     <label for="itemimg">Immagine (url) : </label>
                     <input id="itemimg" type="url" name="itemimg">
+                    </div>
+                    <div class="input-wrap">
                     <label for="itemdesc">Descrizione: </label>
                     <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
+                    </div>
+                    <div class="input-wrap">
                     <label for="itemprice">Prezzo: </label>
                     <input id="itemprice" type="number" min="0.01" name="itemprice">
+                    </div>
+                    <div class="input-wrap">
                     <label for="itemnum">Quantità: </label>
                     <input id="itemnum" type="number" min="1" step="1" name="itemnum">
+                    </div>
                 </form>
+                </div>
             </div>
     </body>
 </html>

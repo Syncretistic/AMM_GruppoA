@@ -21,15 +21,21 @@ and open the template in the editor.
             <li class="venditore"><a href="venditore.html">Vendi</a></li>
             <li class="login"><a href="login.html">Login</a></li>
         </ul>
-        <div class="container">
-            <h1>Login</h1>
+        <div class="container">+
+            <div class="loginform">
+            <h1>Sign in</h1>
             <form method="get">
+                <div class="input-wrap">
                 <label for="user">Username</label>
-                <input id="user" type="text" name="user">
+                <input id="user" type="text" name="user" >
+                </div>
+                <div class="input-wrap">
                 <label for="psw">Password</label>
                 <input id="psw" type="password" name="psw">
-                <input type="submit" value="Submit">
+                </div>
+                <input type="submit" value="LOGIN" class="btn-std">
             </form>
+            </div>
         </div>
     </body>
 </html>
