@@ -15,38 +15,41 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body class="venditore">
+        <div id="header">
             <ul class="menu">
                 <li class="descrizione"><a href="descrizione.html">Home</a></li>
                 <li class="cliente"><a href="cliente.html">Compra</a></li>
                 <li class="venditore"><a href="venditore.html">Vendi</a></li>
                 <li class="login"><a href="login.html">Login</a></li>
             </ul>
+        </div>
             <div class="container">
                 <h1>Vendi su Tonino Shop</h1>
                 <h2 class="greybg">Inserisci il tuo annuncio</h2>
                 <div class="sellerform">
-                <form method="get">
-                    <div class="input-wrap">
-                    <label for="itemname">Nome Articolo: </label>
-                    <input id="itemname" type="text" name="itemname">
-                    </div>
-                    <div class="input-wrap">
-                    <label for="itemimg">Immagine (url) : </label>
-                    <input id="itemimg" type="url" name="itemimg">
-                    </div>
-                    <div class="input-wrap">
-                    <label for="itemdesc">Descrizione: </label>
-                    <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
-                    </div>
-                    <div class="input-wrap">
-                    <label for="itemprice">Prezzo: </label>
-                    <input id="itemprice" type="number" min="0.01" name="itemprice">
-                    </div>
-                    <div class="input-wrap">
-                    <label for="itemnum">Quantità: </label>
-                    <input id="itemnum" type="number" min="1" step="1" name="itemnum">
-                    </div>
-                </form>
+                    <form method="get">
+                        <div class="input-wrap">
+                        <label for="itemname">Nome Articolo: </label>
+                        <input id="itemname" type="text" name="itemname">
+                        </div>
+                        <div class="input-wrap">
+                        <label for="itemimg">Immagine (url) : </label>
+                        <input id="itemimg" type="url" name="itemimg">
+                        </div>
+                        <div class="input-wrap">
+                        <label for="itemdesc">Descrizione: </label>
+                        <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
+                        </div>
+                        <div class="input-wrap">
+                        <label for="itemprice">Prezzo: </label>
+                        <input id="itemprice" type="number" min="0.01" name="itemprice">
+                        </div>
+                        <div class="input-wrap">
+                        <label for="itemnum">Quantità: </label>
+                        <input id="itemnum" type="number" min="1" step="1" name="itemnum">
+                        </div>
+                        <input type="submit" value="INSERISCI OGGETTO" class="btn-std">
+                    </form>
                 </div>
             </div>
     </body>

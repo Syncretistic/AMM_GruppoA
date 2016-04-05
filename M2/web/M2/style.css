@@ -213,7 +213,7 @@ td {
     color: #222222;
     display: block;
     margin: 40px auto 0px auto;
-    width: 100px;
+    width: 50%;
 }
 .btn-std:hover {
     border: 1px #EEEEEE solid;
