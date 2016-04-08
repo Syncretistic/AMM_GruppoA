@@ -8,7 +8,7 @@
     .container {
         width: 100%;
     }
-    table {
+    .content {
         width: 100%;
     }
     input[type=text],
@@ -18,9 +18,11 @@
     textarea {
         width: 90%;
     }
-    
+    .sidebar {
+        margin-bottom: 30px;
+    }
     .sidebar li,
-    ul.menu li {
+    #header li {
         display: table-cell;
         text-align: center;
         width: 25%;
@@ -30,7 +32,7 @@
         
     }
     .sidebar ul,
-    ul.menu {
+    #header>ul {
         display: table;
         width: 100%;
         float: none;
@@ -51,6 +53,7 @@
         padding: 10px 0px 10px 0px;
         background: rgba(255, 255, 255, .1);
     }
+    
 
 }
 @media all and (min-width: 480px) {
@@ -58,7 +61,7 @@
     .loginform {
         text-align: center;
         width: 480px;
-        margin: 0 auto;
+        margin-left: 15%;
     }
     .sellerform {
         width: 700px;
@@ -86,19 +89,23 @@
     }
     .sidebar {
         float: left;
-        width: 20%;
+        width: 15%;
     }
     .container {
         width: 90%;
         margin: 0 auto;
     }
-    table {
-        width: 75%;
+    .content {
+        float: right;
+        width: 80%;
     }
-    ul.menu {
+    table {
+        width:100%;
+    }
+    #header>ul {
         padding: 5px 0px 5px 4%;
     }
-    ul.menu li {
+    #header li {
         display: inline;
         padding: 0px 20px 0px 20px;
         margin: 0px;
@@ -118,7 +125,7 @@ h2,
 h3,
 h4,
 label,
-.menu,
+#header,
 .sidebar,
 .btn-std {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
@@ -136,16 +143,20 @@ h3 {
 h4 {
     font-size: 1.3em;
 }
-ul.menu {
+#header {
     font-size: 1.8em;
     position: fixed;
     top: 0px;
     width: 100%;
-    background-image: url("./img/tweed.png");
-    list-style: none;
-    margin: 0 auto;
-    border-bottom: 1px solid #555555;
+    background-image: url("./img/tweed.png");  
+    border-bottom: 1px solid #555555;    
 }
+
+#header>ul {
+    margin: 0 auto;
+    list-style: none;
+}
+
 a {
     text-decoration: underline;
     color: #FFFFFF;
@@ -178,6 +189,8 @@ textarea:focus {
 label {
     font-size: 1.5em;
 }
+
+
 
 table {
     text-align: center;
@@ -220,14 +233,14 @@ td {
     background-color: #222222;
     color: #EEEEEE;
 }
-body.cliente ul.menu li.cliente,
-body.cliente ul.menu li.cliente a,
-body.login ul.menu li.login,
-body.login ul.menu li.login a,
-body.venditore ul.menu li.venditore,
-body.venditore ul.menu li.venditore a,
-body.descrizione ul.menu li.descrizione,
-body.descrizione ul.menu li.descrizione a {
+body.cliente #header>ul li.cliente,
+body.cliente #header>ul li.cliente a,
+body.login #header>ul li.login,
+body.login #header>ul li.login a,
+body.venditore #header>ul li.venditore,
+body.venditore #header>ul li.venditore a,
+body.descrizione #header>ul li.descrizione,
+body.descrizione #header>ul li.descrizione a {
     background-color: #EEEEEE;
     color: #222222;
 }
@@ -244,4 +257,16 @@ td h4 {
 .greybg  {
     padding: 10px 0px 10px 0px;
     background: rgba(255, 255, 255, .1);
+}
+
+.clear {
+    clear:both;
+}
+
+#footer {
+    background: rgba(255, 255, 255, .1);
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    margin: 30px auto;
 }
