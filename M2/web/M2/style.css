@@ -62,7 +62,6 @@
 @media all and (min-width: 480px) {
     
     .loginform {
-        text-align: center;
         width: 480px;
         margin-left: 15%;
     }
