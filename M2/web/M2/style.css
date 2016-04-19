@@ -115,10 +115,10 @@
 }
 @font-face {
     font-family: Futura;
-    src: url(./font/Futura-Condensed-Normal.woff);
+    src: url(font/Futura-Condensed-Normal.woff);
 }
 body {
-    background-image: url("./img/tweed.png");
+    background-image: url("img/tweed.png");
     color: #EEEEEE;
     font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
@@ -129,7 +129,8 @@ h4,
 label,
 #header,
 .sidebar,
-.btn-std {
+.btn-std,
+.error-msg {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -150,7 +151,7 @@ h4 {
     position: fixed;
     top: 0px;
     width: 100%;
-    background-image: url("./img/tweed.png");  
+    background-image: url("img/tweed.png");  
     border-bottom: 1px solid #555555;    
 }
 
@@ -184,7 +185,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 input[type=number]:focus,
 input[type=password]:focus,
-textarea:focus {
+textarea:focus, select:focus {
         border: 2px solid #EEEEEE;
         outline: none;
     }
@@ -276,4 +277,27 @@ td h4 {
 #footer>p {
     font-size: 0.8em;
     color: #AAAAAA;
+}
+
+.error-msg {
+    width: 100%;
+    font-size: 1.2em;
+    color: red;
+    text-align: center;
+}
+
+select {
+    margin-left: 5px;
+    width: 77%;
+    float: right;
+    background: none;
+    font-size: 1.2em;
+    color: #EEEEEE;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #888888;
+}
+
+option {
+    background-color: #222222;
 }
