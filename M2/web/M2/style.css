@@ -18,7 +18,7 @@
     input[type=url],
     input[type=number],
     input[type=password],
-    textarea {
+    textarea, select {
         width: 90%;
     }
     .sidebar {
@@ -60,6 +60,13 @@
 
 }
 @media all and (min-width: 480px) {
+    
+    
+    select {
+        margin-left: 5px;
+        width: 77%;
+        float: right;
+    }
     
     .loginform {
         width: 480px;
@@ -287,9 +294,6 @@ td h4 {
 }
 
 select {
-    margin-left: 5px;
-    width: 77%;
-    float: right;
     background: none;
     font-size: 1.2em;
     color: #EEEEEE;
@@ -301,3 +305,4 @@ select {
 option {
     background-color: #222222;
 }
+

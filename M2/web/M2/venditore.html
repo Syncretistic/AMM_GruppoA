@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-   To change this license header, choose License Headers in Project Properties.
-   To change this template file, choose Tools | Templates
-   and open the template in the editor.
-   -->
 <html>
    <head>
       <title>Tonino Shop - Vendi</title>
@@ -12,67 +7,82 @@
       <meta name="description" content="Vendi su Tonino Shop">
       <meta name="keywords" content="Tonino, Shop, Elettronica, Usato, Tablet, Smartphone, Vendita">
       <meta name="author" content="Saverio Salaris">
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="M2/style.css">
    </head>
    <body class="venditore">
       <div id="header">
-         <ul>
-            <li class="descrizione"><a href="descrizione.html">Home</a></li>
-            <li class="cliente"><a href="cliente.html">Compra</a></li>
-            <li class="venditore"><a href="venditore.html">Vendi</a></li>
-            <li class="login"><a href="login.html">Login</a></li>
-         </ul>
-      </div>
+    <ul>
+        <li class="descrizione"><a href="descrizione.html">Home</a></li>
+        <li class="cliente"><a href="cliente.html">Compra</a></li>
+        <li class="venditore"><a href="venditore.html">Vendi</a></li>
+        <li class="login"><a href="login.html">Login</a></li>
+    </ul>
+</div>
       <div class="container">
          <h1>Vendi su Tonino Shop</h1>
          <div class="sidebar">
-            <h3 class="greysb">Categorie</h3>
-            <ul>
-               <li><a href="cliente.html">Desktop</a></li>
-               <li><a href="cliente.html">Tablet</a></li>
-               <li><a href="cliente.html">Smartphone</a></li>
-               <li><a href="cliente.html">Laptop</a></li>
-            </ul>
-            <h3 class="greysb">Contatti</h3>
-            <ul>
-               <li><a href="#">FAQ</a></li>
-               <li><a href="#">Assistenza tecnica</a></li>
-               <li><a href="#">Reclami</a></li>
-            </ul>
-         </div>
+    <h3 class="greysb">Categorie</h3>
+    <ul>
+        <li><a href="cliente.jsp">Desktop</a></li>
+        <li><a href="cliente.jsp">Tablet</a></li>
+        <li><a href="cliente.jsp">Smartphone</a></li>
+        <li><a href="cliente.jsp">Laptop</a></li>
+    </ul>
+    <h3 class="greysb">Contatti</h3>
+    <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Assistenza tecnica</a></li>
+        <li><a href="#">Reclami</a></li>
+    </ul>
+ </div>
          <div class="content">
-            <h2 class="greybg">Inserisci il tuo annuncio</h2>
-            <div class="sellerform">
-               <form method="get">
-                  <div class="input-wrap">
-                     <label for="itemname">Nome Articolo: </label>
-                     <input id="itemname" type="text" name="itemname">
-                  </div>
-                  <div class="input-wrap">
-                     <label for="itemimg">Immagine (url) : </label>
-                     <input id="itemimg" type="url" name="itemimg">
-                  </div>
-                  <div class="input-wrap">
-                     <label for="itemdesc">Descrizione: </label>
-                     <textarea rows="5" cols="30" id="itemdesc" name="itemdesc"></textarea>
-                  </div>
-                  <div class="input-wrap">
-                     <label for="itemprice">Prezzo: </label>
-                     <input id="itemprice" type="number" min="0.01" name="itemprice">
-                  </div>
-                  <div class="input-wrap">
-                     <label for="itemnum">Quantità: </label>
-                     <input id="itemnum" type="number" min="1" step="1" name="itemnum">
-                  </div>
-                  <input type="submit" value="INSERISCI OGGETTO" class="btn-std">
-               </form>
-            </div>
+             
+                
+                
+                <h2 class="greybg">Inserisci il tuo annuncio</h2>
+                <div class="sellerform">
+                  <form method="get" action="venditore.html">
+                     <div class="input-wrap">
+                        <label for="itemName">Nome Articolo: </label>
+                        <input id="itemName" type="text" name="itemName">
+                     </div>
+                     <div class="input-wrap">
+                        <label for="imgUrl">Immagine (url) : </label>
+                        <input id="imgUrl" type="url" name="imgUrl">
+                     </div>
+                      <div class="input-wrap">
+                        <label for="itemCat">Categoria: </label>                    
+                        <select name="itemCat" id="itemCat">
+                          <option value="Desktop">Desktop</option>
+                          <option value="Tablet">Tablet</option>
+                          <option value="Smartphone">Smartphone</option>
+                          <option value="Laptop">Laptop</option>
+                        </select>
+                     </div>
+                     <div class="input-wrap">
+                        <label for="itemDesc">Descrizione: </label>
+                        <textarea rows="5" cols="30" id="itemDesc" name="itemDesc"></textarea>
+                     </div>
+                     <div class="input-wrap">
+                        <label for="itemPrice">Prezzo: </label>
+                        <input id="itemPrice" type="number" min="0" name="itemPrice">
+                     </div>
+                     <div class="input-wrap">
+                        <label for="itemQuantity">Quantità: </label>
+                        <input id="itemQuantity" type="number" min="1" step="1" name="itemQuantity">
+                     </div>
+                      
+                     <input type="submit" name="SubmitItem" value="INSERISCI OGGETTO" class="btn-std">
+                  </form>
+               </div>
+                
+               
+            
          </div>
-         <div class="clear"></div>
-      </div>
-      <div id="footer">
-         <p>&copy; 2016 Tonino Shop, Inc. All Rights Reserved.
-         </p>
-      </div>
+          <div class="clear"></div>
+            </div>
+<div id="footer">
+    <p>&copy; 2016 Tonino Shop, Inc. All Rights Reserved.</p>
+</div>
    </body>
 </html>
