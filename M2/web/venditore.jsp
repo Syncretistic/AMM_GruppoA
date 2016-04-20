@@ -66,8 +66,10 @@
                         <label for="itemQuantity">Quantità: </label>
                         <input id="itemQuantity" type="number" min="1" step="1" name="itemQuantity">
                      </div>
+                     <div class="input-wrap"> 
                      <input type="submit" name="SubmitItem" value="INSERISCI OGGETTO" class="btn-std">
-                  </form>
+                     </div>
+                     </form>
                </div>
                 </c:when>
                <c:otherwise>

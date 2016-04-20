@@ -42,16 +42,20 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         if (session.getAttribute("loggedUser") != null){
-            User user = (User)session.getAttribute("loggedUser");
-            if(user instanceof Vendor){
-                        session.setAttribute("loggedVendor", user);
-                        response.sendRedirect("venditore.html");  
-                        return;
-                    } else {
-                        session.setAttribute("loggedBuyer", user);
-                        response.sendRedirect("cliente.html");  
-                        return;
-                    }
+            if(request.getParameter("logout") != null){
+                session.invalidate();
+            } else {
+                User user = (User)session.getAttribute("loggedUser");
+                if(user instanceof Vendor){
+                            session.setAttribute("loggedVendor", user);
+                            response.sendRedirect("venditore.html");  
+                            return;
+                        } else {
+                            session.setAttribute("loggedBuyer", user);
+                            response.sendRedirect("cliente.html");  
+                            return;
+                        }
+            }
         }
         if(request.getParameter("Submit") != null)
         {

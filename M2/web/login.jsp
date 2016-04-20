@@ -37,7 +37,9 @@
                             <c:if test="${not empty login_failed}">
                                 <div class="error-msg">Login fallito. Prova di nuovo.</div>
                             </c:if> 
-                          <input type="submit" name ="Submit" value="LOGIN" class="btn-std">
+                          <div class="input-wrap">
+                            <input type="submit" name ="Submit" value="LOGIN" class="btn-std">
+                          </div>  
                        </form>
                     </div>
                 </c:when>
