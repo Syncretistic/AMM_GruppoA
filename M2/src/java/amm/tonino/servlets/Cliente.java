@@ -5,6 +5,9 @@
  */
 package amm.tonino.servlets;
 
+import amm.tonino.shop.Account;
+import amm.tonino.shop.AccountFactory;
+import amm.tonino.shop.Buyer;
 import amm.tonino.shop.Item;
 import amm.tonino.shop.ItemFactory;
 import java.io.IOException;
@@ -36,28 +39,49 @@ public class Cliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        // check sessione
         HttpSession session = request.getSession();
         
         if(session != null){
-            request.setAttribute("buyer", session.getAttribute("loggedBuyer"));
+            
             ArrayList<Item> itemList = ItemFactory.getInstance().getItemList();
+            //check utente loggato
             if(session.getAttribute("loggedBuyer") != null){
-                if(request.getParameter("itemId")!= null){
+                Buyer currBuyer = (Buyer) session.getAttribute("loggedBuyer");
+                request.setAttribute("buyer", currBuyer);
+                // logica di controllo acquisto
+                if(request.getParameter("itemPurchase")!= null && request.getParameter("itemPurchase").matches("\\d+")){
+                    System.out.println("Acquisto in corso");
+                    int itemId = Integer.parseInt(request.getParameter("itemPurchase"));
+                    Double userBalance = AccountFactory.getInstance().getAccountById(currBuyer.getId()).getBalance();
+                    Double itemPrice = ItemFactory.getInstance().getItemById(itemId).getPrice();
+                    if(itemPrice < userBalance){
+                        System.out.println("Acquisto ok");
+                        request.setAttribute("purchaseOk", true);
+                        // in teoria scala i soldi dall'utente
+                        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    } else {
+                        System.out.println("Acquisto fallito");
+                        request.setAttribute("purchaseFailed", true);
+                        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    }
+                    // resoconto oggetto selezionato
+                } else if(request.getParameter("itemId")!= null){
                     int itemId = Integer.parseInt(request.getParameter("itemId"));
                     Item item = ItemFactory.getInstance().getItemById(itemId);
                     request.setAttribute("itemDetails", item);
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
-                    System.out.println("match found");
+                    //elenco oggetti in vendita
                 } else {
                     request.setAttribute("itemList", itemList);
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                 }
             } else {
-                request.setAttribute("error_msg", true);
+                request.setAttribute("login_error", true);
                 request.getRequestDispatcher("cliente.jsp").forward(request, response);
             }
         } else {
-                request.setAttribute("error_msg", true);
+                request.setAttribute("login_error", true);
                 request.getRequestDispatcher("cliente.jsp").forward(request, response);
         }
         

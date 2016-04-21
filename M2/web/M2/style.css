@@ -61,7 +61,16 @@
 }
 @media all and (min-width: 480px) {
     
-    
+    #reviewPurchase {
+        text-align: center;
+        width: 300px;
+        margin-left: 100px;
+    }
+    #reviewPurchase .btn-std {
+        width: 50%;
+        display: block;
+        margin: 30px auto;
+    }
     select {
         margin-left: 5px;
         width: 77%;
@@ -72,7 +81,7 @@
         width: 480px;
         margin-left: 15%;
     }
-    .sellerform {
+    .sellerform{
         width: 700px;
         text-align: left;
     }

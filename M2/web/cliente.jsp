@@ -23,6 +23,12 @@
          <%@ include file="sidebar.jsp" %>
          <div class="content">
             <c:choose>
+                <c:when test="${not empty buyer && not empty purchaseOk}">
+                    Acquisto concluso con successo!
+                </c:when>
+                <c:when test="${not empty buyer && not empty purchaseFailed}">
+                    Fondi insufficienti!
+                </c:when>
                 <c:when test="${empty itemDetails && not empty buyer}">
                     <table>
                         <c:forEach var="item" items="${itemList}">
@@ -45,19 +51,21 @@
                     </table>
                 </c:when>
                 <c:when test="${not empty itemDetails && not empty buyer}">
-                    <h3>Dettaglio Oggetto</h3>
-                    <p>Immagine: </p>
-                    <img src="${itemDetails.imgUrl}" alt="Foto art." width="150" height="150"/>
-                    <p>Nome: ${itemDetails.name}</p>
-                    <p>Prezzo: ${itemDetails.price}</p>
-                    <p>Quantità: ${itemDetails.quantity}</p>
-                    <p>Descrizione: ${itemDetails.description}</p>
-                    <p>Categoria: ${itemDetails.category}</p>
-                    <a href="cliente.html?itemPurchase=${item.id}" class="btn-std">Acquista</a>
+                    <div id="reviewPurchase">
+                        <h3>Dettaglio Oggetto</h3>
+                        <p>Immagine: </p>
+                        <img src="${itemDetails.imgUrl}" alt="Foto art." width="150" height="150"/>
+                        <p>Nome: ${itemDetails.name}</p>
+                        <p>Prezzo: ${itemDetails.price}</p>
+                        <p>Quantità: ${itemDetails.quantity}</p>
+                        <p>Descrizione: ${itemDetails.description}</p>
+                        <p>Categoria: ${itemDetails.category}</p>
+                        <a href="cliente.html?itemPurchase=${itemDetails.id}" class="btn-std">conferma acquisto</a>
+                    </div>
                 </c:when>
-                <c:otherwise>
+                <c:when test="${not empty login_error}">
                      <div class="error-msg">Zona riservata. Effettua il Login.</div>
-                 </c:otherwise>
+                 </c:when>
             </c:choose>
          </div>
       <%@ include file="footer.jsp" %>
