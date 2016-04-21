@@ -60,7 +60,7 @@
                      </div>
                      <div class="input-wrap">
                         <label for="itemPrice">Prezzo: </label>
-                        <input id="itemPrice" type="number" min="0" name="itemPrice">
+                        <input id="itemPrice" type="number" min="0" step="0.01" name="itemPrice">
                      </div>
                      <div class="input-wrap">
                         <label for="itemQuantity">Quantità: </label>

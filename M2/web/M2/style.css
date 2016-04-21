@@ -146,7 +146,8 @@ label,
 #header,
 .sidebar,
 .btn-std,
-.error-msg {
+.error-msg,
+.success_msg {
     font-family: "Futura", "Lucida Sans Unicode", Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -299,6 +300,13 @@ td h4 {
     width: 100%;
     font-size: 1.2em;
     color: red;
+    text-align: center;
+}
+
+.success-msg {
+    width: 100%;
+    font-size: 1.2em;
+    color: greenyellow;
     text-align: center;
 }
 

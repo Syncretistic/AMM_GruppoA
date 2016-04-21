@@ -24,10 +24,10 @@
          <div class="content">
             <c:choose>
                 <c:when test="${not empty buyer && not empty purchaseOk}">
-                    Acquisto concluso con successo!
+                    <div class="success-msg">Acquisto concluso con successo!</div>
                 </c:when>
                 <c:when test="${not empty buyer && not empty purchaseFailed}">
-                    Fondi insufficienti!
+                    <div class="error-msg">Fondi insufficienti! </div>
                 </c:when>
                 <c:when test="${empty itemDetails && not empty buyer}">
                     <table>
