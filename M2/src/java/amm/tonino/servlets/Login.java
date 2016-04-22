@@ -6,11 +6,11 @@ package amm.tonino.servlets;
  * and open the template in the editor.
  */
 
-import amm.tonino.shop.Buyer;
-import amm.tonino.shop.BuyerFactory;
-import amm.tonino.shop.Vendor;
-import amm.tonino.shop.VendorFactory;
-import amm.tonino.shop.User;
+import amm.tonino.classes.Buyer;
+import amm.tonino.classes.BuyerFactory;
+import amm.tonino.classes.Vendor;
+import amm.tonino.classes.VendorFactory;
+import amm.tonino.classes.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;

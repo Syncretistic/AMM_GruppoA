@@ -3,7 +3,7 @@
  * To change this tgpplate file, choose Tools | Tgpplates
  * and open the tgpplate in the editor.
  */
-package amm.tonino.shop;
+package amm.tonino.classes;
 
 import java.util.ArrayList;
 

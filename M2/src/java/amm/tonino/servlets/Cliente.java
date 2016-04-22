@@ -5,11 +5,11 @@
  */
 package amm.tonino.servlets;
 
-import amm.tonino.shop.Account;
-import amm.tonino.shop.AccountFactory;
-import amm.tonino.shop.Buyer;
-import amm.tonino.shop.Item;
-import amm.tonino.shop.ItemFactory;
+import amm.tonino.classes.Account;
+import amm.tonino.classes.AccountFactory;
+import amm.tonino.classes.Buyer;
+import amm.tonino.classes.Item;
+import amm.tonino.classes.ItemFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;

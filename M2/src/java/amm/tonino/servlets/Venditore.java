@@ -5,9 +5,9 @@
  */
 package amm.tonino.servlets;
 
-import amm.tonino.shop.Vendor;
-import amm.tonino.shop.Item;
-import amm.tonino.shop.User;
+import amm.tonino.classes.Vendor;
+import amm.tonino.classes.Item;
+import amm.tonino.classes.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
