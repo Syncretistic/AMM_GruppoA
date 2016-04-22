@@ -23,12 +23,15 @@
          <%@ include file="sidebar.jsp" %>
          <div class="content">
             <c:choose>
+                <!-- Acquisto concluso con successo -->
                 <c:when test="${not empty buyer && not empty purchaseOk}">
                     <div class="success-msg">Acquisto concluso con successo!</div>
                 </c:when>
+                <!-- Acquisto fallito -->
                 <c:when test="${not empty buyer && not empty purchaseFailed}">
                     <div class="error-msg">Fondi insufficienti! </div>
                 </c:when>
+                    <!-- Tabella oggetti in vendita -->
                 <c:when test="${empty itemDetails && not empty buyer}">
                     <table>
                         <c:forEach var="item" items="${itemList}">
@@ -50,6 +53,7 @@
                         </c:forEach>
                     </table>
                 </c:when>
+                    <!-- Riepilogo dettagli oggetto aggiunto al carrello -->
                 <c:when test="${not empty itemDetails && not empty buyer}">
                     <div id="reviewPurchase">
                         <h3>Dettaglio Oggetto</h3>
@@ -63,6 +67,7 @@
                         <a href="cliente.html?itemPurchase=${itemDetails.id}" class="btn-std">conferma acquisto</a>
                     </div>
                 </c:when>
+                    <!-- Utente non loggato -->
                 <c:when test="${not empty login_error}">
                      <div class="error-msg">Zona riservata. Effettua il Login.</div>
                  </c:when>
@@ -71,111 +76,3 @@
       <%@ include file="footer.jsp" %>
    </body>
 </html>
-
-<!--
-                <tr>
-                  <td>
-                     <h4>D510 MT Desktop Computer</h4>
-                     <img src="./img/Desktop1.jpg" alt="Foto art.1" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 799,66€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 15
-                  </td>
-                  <td>
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>Smartphone Samsung Galaxy s6</h4>
-                     <img src="./img/GalaxyS6.jpg" alt="Foto art.2" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 539,90€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 2
-                  </td>
-                  <td>
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>Hannspree Tablet PC 10,1"</h4>
-                     <img src="./img/HanspreeTablet1.jpg" alt="Foto art.3" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 260,66€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 12
-                  </td>
-                  <td>
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>Apple Iphone 6</h4>
-                     <img src="./img/Iphone1.jpg" alt="Foto art.4" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 666,66€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 5
-                  </td>
-                  <td>
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>ASUS - Notebook con Monitor 15,6" Full HD</h4>
-                     <img src="./img/Laptop1.jpg" alt="Foto art.5" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 659,99€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 22
-                  </td>
-                  <td class="itemattr">
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>ASUS - VS228DE Monitor 21.5</h4>
-                     <img src="./img/Monitor1.jpg" alt="Foto art.6" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 119,99€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 37
-                  </td>
-                  <td class="itemattr">
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               <tr>
-                  <td>
-                     <h4>Western Digital Caviar Black 1 TB</h4>
-                     <img src="./img/HDD1.jpg" alt="Foto art.5" width="150" height="150"/>
-                  </td>
-                  <td class="itemattr">
-                     Prezzo: 79,99€
-                  </td>
-                  <td class="itemattr">
-                     Disponibili: 320
-                  </td>
-                  <td class="itemattr">
-                     <a href="cliente.jsp" class="btn-std">Aggiungi al carrello</a>
-                  </td>
-               </tr>
-               -->
