@@ -30,7 +30,7 @@ public class ItemFactory {
     
         ArrayList<Item> itemList = new ArrayList<Item>();
         
-        Item item_1 = new Item( 0, 0, "Apple Iphone 6", 699.99, 0, "smartphone", "Generic Iphone description", "M2/img/Iphone1.jpg");
+        Item item_1 = new Item( 0, 0, "Apple Iphone 6", 699.99, 1, "smartphone", "Generic Iphone description", "M2/img/Iphone1.jpg");
         itemList.add(item_1);
         Item item_2 = new Item( 1, 0, "Samsung Galaxy s6", 599.99, 5, "smartphone", "Generic Samsung description", "M2/img/GalaxyS6.jpg");
         itemList.add(item_2);
