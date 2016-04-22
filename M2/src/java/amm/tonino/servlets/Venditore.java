@@ -71,7 +71,7 @@ public class Venditore extends HttpServlet {
                     } else {
                         System.out.println("SOME DATA = NULL");
                         System.out.println(name+" "+price+" "+quantity+" "+category+" "+description+" "+imgUrl);
-                        request.setAttribute("error_msg", true);
+                        request.setAttribute("input_error", true);
                         request.getRequestDispatcher("venditore.jsp").forward(request, response);
                     }
                 } else {
@@ -79,11 +79,11 @@ public class Venditore extends HttpServlet {
                 }                
                     
             } else {
-                request.setAttribute("error_msg", true);
+                request.setAttribute("login_error", true);
                 request.getRequestDispatcher("venditore.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("error_msg", true);
+            request.setAttribute("login_error", true);
             request.getRequestDispatcher("venditore.jsp").forward(request, response);
         }
     }

@@ -23,15 +23,12 @@
          <%@ include file="sidebar.jsp" %>
          <div class="content">
             <c:choose>
-                <!-- Acquisto concluso con successo -->
                 <c:when test="${not empty buyer && not empty purchaseOk}">
                     <div class="success-msg">Acquisto concluso con successo!</div>
                 </c:when>
-                <!-- Acquisto fallito -->
                 <c:when test="${not empty buyer && not empty purchaseFailed}">
                     <div class="error-msg">Fondi insufficienti! </div>
                 </c:when>
-                    <!-- Tabella oggetti in vendita -->
                 <c:when test="${empty itemDetails && not empty buyer}">
                     <table>
                         <c:forEach var="item" items="${itemList}">
@@ -53,7 +50,6 @@
                         </c:forEach>
                     </table>
                 </c:when>
-                    <!-- Riepilogo dettagli oggetto aggiunto al carrello -->
                 <c:when test="${not empty itemDetails && not empty buyer}">
                     <div id="reviewPurchase">
                         <h3>Dettaglio Oggetto</h3>
@@ -67,7 +63,6 @@
                         <a href="cliente.html?itemPurchase=${itemDetails.id}" class="btn-std">conferma acquisto</a>
                     </div>
                 </c:when>
-                    <!-- Utente non loggato -->
                 <c:when test="${not empty login_error}">
                      <div class="error-msg">Zona riservata. Effettua il Login.</div>
                  </c:when>

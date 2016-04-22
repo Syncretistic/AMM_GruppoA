@@ -33,7 +33,7 @@
                     <p>Descrizione: ${itemPosted.description}</p>
                     <p>Categoria: ${itemPosted.category}</p>
                 </c:when>
-                <c:when test="${not empty vendor}">
+                <c:when test="${not empty vendor && empty login_error}">
                 <h2 class="greybg">Inserisci il tuo annuncio</h2>
                 <div class="sellerform">
                   <form method="get" action="venditore.html">
@@ -66,15 +66,19 @@
                         <label for="itemQuantity">Quantità: </label>
                         <input id="itemQuantity" type="number" min="1" step="1" name="itemQuantity">
                      </div>
+                     <c:if test="${not empty input_error}">
+                      <div class="error-msg">Verifica di aver inserito i dati correttamente.</div>
+                     </c:if>
                      <div class="input-wrap"> 
                      <input type="submit" name="SubmitItem" value="INSERISCI OGGETTO" class="btn-std">
                      </div>
                      </form>
+                    
                </div>
                 </c:when>
-               <c:otherwise>
+               <c:when test="${not empty login_error}">
                    <div class="error-msg">Zona riservata. Effettua il login.</div>
-               </c:otherwise>
+               </c:when>
             </c:choose>
          </div>
       <%@ include file="footer.jsp" %>
