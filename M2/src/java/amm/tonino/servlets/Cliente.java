@@ -55,7 +55,8 @@ public class Cliente extends HttpServlet {
                     int itemId = Integer.parseInt(request.getParameter("itemPurchase"));
                     Double userBalance = AccountFactory.getInstance().getAccountById(currBuyer.getId()).getBalance();
                     Double itemPrice = ItemFactory.getInstance().getItemById(itemId).getPrice();
-                    if(itemPrice < userBalance){
+                    int itemQuantity = ItemFactory.getInstance().getItemById(itemId).getQuantity();
+                    if(itemPrice < userBalance && itemQuantity > 0){
                         System.out.println("Acquisto ok");
                         request.setAttribute("purchaseOk", true);
                         // in teoria scala i soldi dall'utente
