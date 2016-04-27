@@ -7,12 +7,10 @@ package amm.tonino.servlets;
  */
 
 import amm.tonino.classes.Buyer;
-import amm.tonino.classes.BuyerFactory;
 import amm.tonino.classes.Vendor;
-import amm.tonino.classes.VendorFactory;
 import amm.tonino.classes.User;
+import amm.tonino.classes.UserFactory;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,11 +60,8 @@ public class Login extends HttpServlet {
             String username = request.getParameter("user");
             String password = request.getParameter("psw");
             
-            ArrayList<Vendor> vendorList = VendorFactory.getInstance().getVendorList();
-            ArrayList<Buyer> buyerList = BuyerFactory.getInstance().getBuyerList();
-            ArrayList<User> userList = new ArrayList<User>();
-            userList.addAll(vendorList);
-            userList.addAll(buyerList);
+            ArrayList<User> userList = UserFactory.getInstance().getUserList();
+            
             for(User u : userList){
                 
                 if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
@@ -75,7 +70,7 @@ public class Login extends HttpServlet {
                         session.setAttribute("loggedVendor", u);
                         response.sendRedirect("venditore.html");  
                         return;
-                    } else {
+                    } else if (u instanceof Buyer){
                         session.setAttribute("loggedBuyer", u);
                         response.sendRedirect("cliente.html");  
                         return;

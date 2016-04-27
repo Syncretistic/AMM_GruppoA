@@ -78,10 +78,12 @@ public class Cliente extends HttpServlet {
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                 }
             } else {
+                System.out.println("1");
                 request.setAttribute("login_error", true);
                 request.getRequestDispatcher("cliente.jsp").forward(request, response);
             }
         } else {
+            System.out.println("2");
                 request.setAttribute("login_error", true);
                 request.getRequestDispatcher("cliente.jsp").forward(request, response);
         }
