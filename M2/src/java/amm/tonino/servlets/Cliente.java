@@ -59,7 +59,7 @@ public class Cliente extends HttpServlet {
                     if(itemPrice < userBalance && itemQuantity > 0){
                         System.out.println("Acquisto ok");
                         request.setAttribute("purchaseOk", true);
-                        // in teoria scala i soldi dall'utente
+                        // in teoria dovrebbe scalare i soldi dall'utente
                         request.getRequestDispatcher("cliente.jsp").forward(request, response);
                     } else {
                         System.out.println("Acquisto fallito");
@@ -74,6 +74,7 @@ public class Cliente extends HttpServlet {
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                     //elenco oggetti in vendita
                 } else {
+                    /* inserire controllo categoria */
                     request.setAttribute("itemList", itemList);
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                 }
