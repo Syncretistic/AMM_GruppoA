@@ -52,23 +52,25 @@ public class ItemFactory {
         return null;
     }
     
-    public Item getItemByCategory(String category){
+    public ArrayList<Item> getItemByCategory(String category){
         ArrayList<Item> itemList = this.getItemList();
+        ArrayList<Item> itemListByCat = new ArrayList<Item>();
         for(Item item : itemList){
             if(category.equals(item.getCategory())){
-                return item;
+                itemListByCat.add(item);
             }
         }
-        return null;
+        return itemListByCat;
     }
     
-    public Item getItemByPriceRange(double minPrice, double maxPrice){
+    public ArrayList<Item> getItemByPriceRange(double minPrice, double maxPrice){
         ArrayList<Item> itemList = this.getItemList();
+        ArrayList<Item> itemListByPrice = new ArrayList<Item>();
         for(Item item : itemList){
             if(item.getPrice() >= minPrice && item.getPrice() <= maxPrice){
-                return item;
+                itemListByPrice.add(item);
             }
         }
-        return null;
+        return itemListByPrice;
     }
 }
