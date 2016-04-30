@@ -30,6 +30,9 @@
                     <div class="error-msg">Fondi insufficienti! </div>
                 </c:when>
                 <c:when test="${empty itemDetails && not empty buyer}">
+                    <c:if test="${not empty category}">
+                        <h3>Category: ${category}</h3>
+                    </c:if>
                     <table>
                         <c:forEach var="item" items="${itemList}">
                             <tr>
