@@ -74,7 +74,13 @@ public class Cliente extends HttpServlet {
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                     //elenco oggetti in vendita
                 } else {
-                    /* inserire controllo categoria */
+                    if("smartphone".equals(request.getParameter("cat")) ||
+                        "desktop".equals(request.getParameter("cat")) ||
+                        "laptop".equals(request.getParameter("cat")) ||
+                        "tablet".equals(request.getParameter("cat")) ||
+                        "accessories".equals(request.getParameter("cat"))){
+                       itemList = ItemFactory.getInstance().getItemByCategory(request.getParameter("cat"));
+                    }
                     request.setAttribute("itemList", itemList);
                     request.getRequestDispatcher("cliente.jsp").forward(request, response);
                 }
