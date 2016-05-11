@@ -1,0 +1,26 @@
+Tabella Users (tutti not null)
+
+String nome
+String cognome
+int id PK
+String username
+String password
+
+Tabella Accounts (tutti not null)
+
+int userId FK Users(id)
+double balance
+
+Tabella Items
+
+int id PK
+String name
+String description
+double price
+int quantity
+String category
+
+Tabella Vendite
+
+int vendId PK refers id(Users)
+int itemId PK refers id(Items)

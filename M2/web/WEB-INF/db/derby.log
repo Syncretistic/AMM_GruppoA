@@ -1,0 +1,31 @@
+Wed May 11 15:15:10 CEST 2016 : Server di rete Apache Derby: 10.10.1.3 - (1557168) avviato e pronto ad accettare connessioni sulla porta 1527
+----------------------------------------------------------------
+Wed May 11 15:15:10 CEST 2016:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.10.1.3 - (1557168): istanza a816c00e-0154-9ff4-f13e-ffffd3c91712
+sulla directory di database /home/studente/NetBeansProjects/save/AMM_GruppoA/M2/web/WEB-INF/db/ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@144bcfa 
+Caricato da file:/home/studente/jdk1.8.0_05/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_05-b13
+user.dir=/home/studente/jdk1.8.0_05/db
+os.name=Linux
+os.arch=i386
+os.version=3.13.0-79-generic
+derby.system.home=/home/studente/NetBeansProjects/save/AMM_GruppoA/M2/web/WEB-INF/db
+Programma di caricamento classe database avviato - derby.database.classpath=''
+----------------------------------------------------------------
+Wed May 11 15:15:18 CEST 2016:
+Arresto dell'istanza a816c00e-0154-9ff4-f13e-ffffd3c91712 nella directory del database /home/studente/NetBeansProjects/save/AMM_GruppoA/M2/web/WEB-INF/db/ammdb con il caricatore di classi sun.misc.Launcher$AppClassLoader@144bcfa 
+Wed May 11 15:15:18 CEST 2016 Thread[DRDAConnThread_3,5,main] (DATABASE = ammdb), (DRDAID = {2}), Chiusura del database 'ammdb'.
+----------------------------------------------------------------
+Wed May 11 15:15:36 CEST 2016:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.10.1.3 - (1557168): istanza 560740aa-0154-9ff4-f13e-ffffd3c91712
+sulla directory di database /home/studente/NetBeansProjects/save/AMM_GruppoA/M2/web/WEB-INF/db/ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@144bcfa 
+Caricato da file:/home/studente/jdk1.8.0_05/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_05-b13
+user.dir=/home/studente/jdk1.8.0_05/db
+os.name=Linux
+os.arch=i386
+os.version=3.13.0-79-generic
+derby.system.home=/home/studente/NetBeansProjects/save/AMM_GruppoA/M2/web/WEB-INF/db
+Programma di caricamento classe database avviato - derby.database.classpath=''
