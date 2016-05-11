@@ -6,12 +6,16 @@ package amm.tonino.servlets;
  * and open the template in the editor.
  */
 
+import amm.tonino.classes.AccountFactory;
 import amm.tonino.classes.Buyer;
+import amm.tonino.classes.ItemFactory;
 import amm.tonino.classes.Vendor;
 import amm.tonino.classes.User;
 import amm.tonino.classes.UserFactory;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +27,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Saverio
  */
-@WebServlet(name = "Login", urlPatterns = {"/login.html"})
+@WebServlet(name = "Login", urlPatterns = {"/login.html"}, loadOnStartup = 0)
 public class Login extends HttpServlet {
 
     /**
@@ -35,6 +39,32 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
+    
+    @Override 
+
+    public void init(){
+
+        String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+
+        try {
+
+            Class.forName(JDBC_DRIVER);
+
+        } catch (ClassNotFoundException ex) {
+
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+        UserFactory.getInstance().setConnectionString(dbConnection);
+        ItemFactory.getInstance().setConnectionString(dbConnection);
+        AccountFactory.getInstance().setConnectionString(dbConnection);
+
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

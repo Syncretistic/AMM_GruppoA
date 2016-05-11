@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class ItemFactory {
     
     private static ItemFactory singleton;
-
+    private static String connectionString;
+    
     public static ItemFactory getInstance() {
         if (singleton == null) {
             singleton = new ItemFactory();
@@ -24,6 +25,14 @@ public class ItemFactory {
     
     private ItemFactory() {
 
+    }
+    
+    public void setConnectionString(String s){
+	this.connectionString = s;
+    }
+    
+    public String getConnectionString(){
+	return this.connectionString;
     }
     
     public ArrayList<Item> getItemList() {
