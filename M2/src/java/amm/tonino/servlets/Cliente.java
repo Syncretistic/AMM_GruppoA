@@ -12,6 +12,7 @@ import amm.tonino.classes.Item;
 import amm.tonino.classes.ItemFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -59,7 +60,11 @@ public class Cliente extends HttpServlet {
                     if(itemPrice < userBalance && itemQuantity > 0){
                         System.out.println("Acquisto ok");
                         request.setAttribute("purchaseOk", true);
-                        // in teoria dovrebbe scalare i soldi dall'utente
+                        try {
+                            AccountFactory.getInstance().itemPurchase(currBuyer.getId(), itemId);
+                        } catch(SQLException ex){
+                            ex.printStackTrace();
+                        } 
                         request.getRequestDispatcher("cliente.jsp").forward(request, response);
                     } else {
                         System.out.println("Acquisto fallito");

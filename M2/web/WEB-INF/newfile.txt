@@ -19,8 +19,4 @@ String description
 double price
 int quantity
 String category
-
-Tabella Vendite
-
 int vendId PK refers id(Users)
-int itemId PK refers id(Items)

@@ -15,9 +15,10 @@ public class Buyer extends User{
     
     ArrayList<Item> orderList = new ArrayList<Item>();
     
-    public Buyer(){
-        super();
+    public Buyer( int id, String fname, String lname, String username, String password ){
+        super(id,fname,lname,username,password);
     }
+    
     
     public ArrayList<Item> getOrderList(){
         return this.orderList;

@@ -16,8 +16,11 @@ public class Vendor extends User {
     
     ArrayList<Item> itemsForSale = new ArrayList<Item>();
     
-    public Vendor(){
+    public Vendor (){
         super();
+    }
+    public Vendor (int id, String fname, String lname, String username, String password ){
+        super(id,fname,lname,username,password);
     }
 
     public ArrayList<Item> getItemsForSale(){

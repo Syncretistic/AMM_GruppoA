@@ -5,6 +5,11 @@
  */
 package amm.tonino.classes;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -38,26 +43,47 @@ public class ItemFactory {
     public ArrayList<Item> getItemList() {
     
         ArrayList<Item> itemList = new ArrayList<Item>();
-        
-        Item item_1 = new Item( 0, 0, "Apple Iphone 6", 699.99, 1, "smartphone", "Generic Iphone description", "M2/img/Iphone1.jpg");
-        itemList.add(item_1);
-        Item item_2 = new Item( 1, 0, "Samsung Galaxy s6", 599.99, 5, "smartphone", "Generic Samsung description", "M2/img/GalaxyS6.jpg");
-        itemList.add(item_2);
-        Item item_3 = new Item( 2, 0, "D510 MT Desktop Computer", 799.99, 10, "desktop", "Generic Desktop description", "M2/img/Desktop1.jpg");
-        itemList.add(item_3);
-        Item item_4 = new Item( 3, 1, "Western Digital Caviar Black 1 TB", 79.99, 15, "accessories", "Generic HDD description", "M2/img/HDD1.jpg");
-        itemList.add(item_4);
-        Item item_5 = new Item( 4, 1, "ASUS - Notebook con Monitor 15,6\" Full HD", 2999.99, 125, "laptop", "Generic Laptop description", "M2/img/Laptop1.jpg");
-        itemList.add(item_5);
-        Item item_6 = new Item( 5, 1, "ASUS - VS228DE Monitor 21.5", 179.99, 15, "accessories", "Generic Monitor description", "M2/img/Monitor1.jpg");
-        itemList.add(item_6);
-        Item item_7 = new Item( 6, 1, "Hannspree Tablet PC 10,1\"", 479.99, 15, "tablet", "Generic Tablet description", "M2/img/HannspreeTablet1.jpg");
-        itemList.add(item_7);
-        
-        
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql = "select * from items";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet set = stmt.executeQuery();
+             while(set.next()) 
+            {
+                Item current = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));
+                itemList.add(current);
+            }
+            stmt.close();
+            conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+           }
+ 
         return itemList;
     }
     
+    public ArrayList<Item> getItemByVendId(int vendId) {
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql = "select * from items "+"where vendid = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, vendId);
+            ResultSet set = stmt.executeQuery();
+             while(set.next()) 
+            {
+                Item current = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));
+                itemList.add(current);
+            }
+            stmt.close();
+            conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+           }
+ 
+        return itemList;
+    }
+    //da aggiornare con DB
     public Item getItemById(int id){
         ArrayList<Item> itemList = this.getItemList();
         for(Item item : itemList){
@@ -67,7 +93,7 @@ public class ItemFactory {
         }
         return null;
     }
-    
+    //da aggiornare con DB
     public ArrayList<Item> getItemByCategory(String category){
         ArrayList<Item> itemList = this.getItemList();
         ArrayList<Item> itemListByCat = new ArrayList<Item>();
@@ -78,7 +104,7 @@ public class ItemFactory {
         }
         return itemListByCat;
     }
-    
+    //da aggiornare con DB
     public ArrayList<Item> getItemByPriceRange(double minPrice, double maxPrice){
         ArrayList<Item> itemList = this.getItemList();
         ArrayList<Item> itemListByPrice = new ArrayList<Item>();
@@ -88,5 +114,61 @@ public class ItemFactory {
             }
         }
         return itemListByPrice;
+    }
+    
+    public void addItem(String itemName, String description, int quantity, double price, String category, String img, int vendId){
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql = "INSERT INTO Items" + "(id, itemName, description, quantity, price, category, img, vendId)" + "VALUES (default,?,?,?,?,?,?,?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, itemName);
+            stmt.setString(2, description);
+            stmt.setInt(3, quantity);
+            stmt.setDouble(4, price);
+            stmt.setString(5, category);
+            stmt.setString(6, img);
+            stmt.setInt(7, vendId);
+            stmt.executeUpdate();
+            stmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+                ex.printStackTrace();
+        }
+           
+    }
+    
+    public void deleteItem(int id){
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql_1 = "DELETE FROM Items " + "WHERE id = ? ";
+            PreparedStatement deleteItem = conn.prepareStatement(sql_1);
+            deleteItem.setInt(1, id);
+            deleteItem.executeUpdate();
+            deleteItem.close();
+            conn.close();
+        } catch (SQLException ex) {
+                ex.printStackTrace();
+        }
+        
+    }
+    
+    public void updateItem(int id, String itemName, String description, int quantity, double price, String category, String img){
+        try{
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql = "UPDATE items SET " + "itemname = ?, description = ?, quantity = ?, price = ?, category = ?, img = ? WHERE id = ?";
+            PreparedStatement updateItem = conn.prepareStatement(sql);
+            updateItem.setString(1, itemName);
+            updateItem.setString(2, description);
+            updateItem.setInt(3, quantity);
+            updateItem.setDouble(4, price);
+            updateItem.setString(5, category);
+            updateItem.setString(6, img);
+            updateItem.setInt(7, id);
+            updateItem.executeUpdate();
+            updateItem.close();
+            conn.close();
+        } catch (SQLException ex) {
+                ex.printStackTrace();
+        }
     }
 }

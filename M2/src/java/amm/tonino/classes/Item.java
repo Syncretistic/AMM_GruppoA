@@ -12,28 +12,28 @@ package amm.tonino.classes;
 public class Item {
     
     private int id;
-    private int vendorId;
     private String name;
     private double price;
     private int quantity;
     private String category;
     private String description;
     private String imgUrl;
+    private int vendId;
     
     public Item(){
-       //constructor 
+       
     }
     
-    public Item(int id, int vendorId, String name, double price, int quantity, String category, String description, String imgUrl){
+    public Item(int id, String name, double price, int quantity, String category, String description, String imgUrl, int vendId){
        
         this.id = id;
-        this.vendorId = vendorId;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.category = category;
         this.description = description;
         this.imgUrl = imgUrl;
+        this.vendId = vendId;
     }
     
     /**
@@ -105,21 +105,7 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    /**
-     * @return the vendorId
-     */
-    public int getVendorId() {
-        return vendorId;
-    }
-
-    /**
-     * @param vendorId the vendorId to set
-     */
-    public void setVendorId(int vendorId) {
-        this.vendorId = vendorId;
-    }
-
+    
     /**
      * @return the category
      */
@@ -146,5 +132,19 @@ public class Item {
      */
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    /**
+     * @return the vendId
+     */
+    public int getVendId() {
+        return vendId;
+    }
+
+    /**
+     * @param vendId the vendId to set
+     */
+    public void setVendId(int vendId) {
+        this.vendId = vendId;
     }
 }

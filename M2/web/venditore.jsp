@@ -35,6 +35,7 @@
                 </c:when>
                 <c:when test="${not empty vendor && empty login_error}">
                 <h2 class="greybg">Inserisci il tuo annuncio</h2>
+                <a href="venditore.html?UpdateItem=true"><button class="btn-std">Modify/delete existing item</button><a/>
                 <div class="sellerform">
                   <form method="get" action="venditore.html">
                      <div class="input-wrap">

@@ -13,6 +13,7 @@ import amm.tonino.classes.Vendor;
 import amm.tonino.classes.User;
 import amm.tonino.classes.UserFactory;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,75 +44,54 @@ public class Login extends HttpServlet {
     private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
     private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
     
-    @Override 
-
-    public void init(){
-
-        String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
-
-        try {
-
-            Class.forName(JDBC_DRIVER);
-
-        } catch (ClassNotFoundException ex) {
-
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-
-        }
-
-        UserFactory.getInstance().setConnectionString(dbConnection);
-        ItemFactory.getInstance().setConnectionString(dbConnection);
-        AccountFactory.getInstance().setConnectionString(dbConnection);
-
-    }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
-        if (session.getAttribute("loggedUser") != null){
+        if (session.getAttribute("loggedVendor") != null){
+            System.out.println("1");
             if(request.getParameter("logout") != null){
                 session.invalidate();
+                
             } else {
-                User user = (User)session.getAttribute("loggedUser");
-                if(user instanceof Vendor){
-                            session.setAttribute("loggedVendor", user);
-                            response.sendRedirect("venditore.html");  
-                            return;
-                        } else {
-                            session.setAttribute("loggedBuyer", user);
-                            response.sendRedirect("cliente.html");  
-                            return;
-                        }
+                response.sendRedirect("venditore.html");  
+                return;
+            }
+        } else if (session.getAttribute("loggedBuyer") != null){
+            if(request.getParameter("logout") != null){
+                session.invalidate();
+                
+            } else {
+                response.sendRedirect("cliente.html");  
+                return;
             }
         }
+            
+     
         if(request.getParameter("Submit") != null)
         {
             String username = request.getParameter("user");
             String password = request.getParameter("psw");
-            
-            ArrayList<User> userList = UserFactory.getInstance().getUserList();
-            
-            for(User u : userList){
-                
-                if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
-                    session.setAttribute("loggedUser", u);
-                    if(u instanceof Vendor){
-                        session.setAttribute("loggedVendor", u);
+            try {
+                User user = UserFactory.getInstance().userLogin(username,password);
+                if (user != null) {
+                    if (user instanceof Vendor){
+                        session.setAttribute("loggedVendor", user);
                         response.sendRedirect("venditore.html");  
                         return;
-                    } else if (u instanceof Buyer){
-                        session.setAttribute("loggedBuyer", u);
+                    } else if (user instanceof Buyer){
+                        session.setAttribute("loggedBuyer", user);
                         response.sendRedirect("cliente.html");  
                         return;
                     }                    
                 }
-            }
+            } catch(SQLException ex){
+                ex.printStackTrace();
+            } 
             request.setAttribute("login_failed", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
-            return;
         }
-        
+        System.out.println("2");
         request.getRequestDispatcher("login.jsp").forward(request, response);
 
     }

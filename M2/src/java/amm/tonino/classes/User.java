@@ -18,11 +18,14 @@ public abstract class User {
     protected String password;
     
     public User(){
-        id = 0;
-        fname = "";
-        lname = "";
-        username="";
-        password="";
+        
+    }
+    public User(int id, String fname, String lname, String username, String password){
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname;
+        this.username = username;
+        this.password = password;
     }
     
     public int getId() {
