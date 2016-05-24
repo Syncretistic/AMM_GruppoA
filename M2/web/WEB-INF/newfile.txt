@@ -19,4 +19,4 @@ String description
 double price
 int quantity
 String category
-int vendId PK refers id(Users)
+int vendId FK refers id(Users)
