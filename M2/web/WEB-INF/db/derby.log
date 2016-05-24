@@ -12,3 +12,9 @@ os.arch=amd64
 os.version=6.1
 derby.system.home=C:\Users\Saverio\Desktop\AMM\Progetto\AMM_GruppoA\M2\web\WEB-INF\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
+----------------------------------------------------------------
+Tue May 24 15:56:38 CEST 2016: arresto in corso del motore di Derby
+----------------------------------------------------------------
+Tue May 24 15:56:38 CEST 2016:
+Arresto dell'istanza a816c00e-0154-e2ec-0e43-00002ecf6170 nella directory del database C:\Users\Saverio\Desktop\AMM\Progetto\AMM_GruppoA\M2\web\WEB-INF\db\ammdb con il caricatore di classi sun.misc.Launcher$AppClassLoader@60e53b93 
+----------------------------------------------------------------

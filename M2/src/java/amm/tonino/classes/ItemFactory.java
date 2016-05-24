@@ -83,15 +83,21 @@ public class ItemFactory {
  
         return itemList;
     }
-    //da aggiornare con DB
     public Item getItemById(int id){
-        ArrayList<Item> itemList = this.getItemList();
-        for(Item item : itemList){
-            if(item.getId() == id){
-                return item;
-            }
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String sql = "select * from items "+"where id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet set = stmt.executeQuery();
+            Item item = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));
+            stmt.close();
+            conn.close();
+            return item;
+        } catch (SQLException ex) {
+                ex.printStackTrace();
         }
-        return null;
+        return null;     
     }
     //da aggiornare con DB
     public ArrayList<Item> getItemByCategory(String category){
