@@ -90,10 +90,13 @@ public class ItemFactory {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet set = stmt.executeQuery();
-            Item item = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));
-            stmt.close();
-            conn.close();
-            return item;
+            if (set.next()){
+                Item item = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));                
+                stmt.close();
+                conn.close();
+                return item;
+            }
+            
         } catch (SQLException ex) {
                 ex.printStackTrace();
         }
