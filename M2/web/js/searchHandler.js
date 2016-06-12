@@ -29,14 +29,17 @@ $(document).ready(function ()
   
         function refreshItemList(itemList)
         {
-            // Cancella la lista
             $("#itemTable").empty();
-            for(var i in itemList)
-            {
-                var html = "<tr><td><h4>" + itemList[i].name + "</h4><img src=\"" + itemList[i].imgUrl + "\" alt=\"Foto art.\"  width=\"150\" height=\"150\"/></td>";
-                html += "<td class=\"itemattr\">Prezzo: " + itemList[i].price + "</td><td class=\"itemattr\">Disponibili: " + itemList[i].quantity + "</td>";
-                html += "<td><a href=\"cliente.html?itemId=" + itemList[i].id + "\" class=\"btn-std\">Aggiungi al carrello</a></td></tr>";     
-                $("#itemTable").append(html);
+            if(itemList.length > 0){
+                for(var i in itemList)
+                {
+                    var html = "<tr><td><h4>" + itemList[i].name + "</h4><img src=\"" + itemList[i].imgUrl + "\" alt=\"Foto art.\"  width=\"150\" height=\"150\"/></td>";
+                    html += "<td class=\"itemattr\">Prezzo: " + itemList[i].price + "</td><td class=\"itemattr\">Disponibili: " + itemList[i].quantity + "</td>";
+                    html += "<td><a href=\"cliente.html?itemId=" + itemList[i].id + "\" class=\"btn-std\">Aggiungi al carrello</a></td></tr>";     
+                    $("#itemTable").append(html);
+                }
+            } else {
+                $("#itemTable").append("<div class=\"error-msg\">Nessun oggetto trovato</div>");
             }
         }
     }); 

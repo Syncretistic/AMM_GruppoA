@@ -36,7 +36,7 @@
                         <h3>Category: ${category}</h3>
                     </c:if>
                     <div class="input-wrap">
-                        <label for="search">Barra di ricerca</label>
+                        <label for="search">Filtra gli oggetti</label>
                         <input type="text" id="search" size="15"/>
                     </div>
                     <table id="itemTable">
