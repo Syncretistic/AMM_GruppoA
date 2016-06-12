@@ -15,6 +15,8 @@
       <meta name="keywords" content="Tonino, Shop, Elettronica, Usato, Tablet, Smartphone, Compra">
       <meta name="author" content="Saverio Salaris">
       <link rel="stylesheet" type="text/css" href="M2/style.css">
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/searchHandler.js"></script>
    </head>
    <body class="cliente">
       <%@ include file="header.jsp" %>
@@ -33,7 +35,11 @@
                     <c:if test="${not empty category}">
                         <h3>Category: ${category}</h3>
                     </c:if>
-                    <table>
+                    <div class="input-wrap">
+                        <label for="search">Barra di ricerca</label>
+                        <input type="text" id="search" size="15"/>
+                    </div>
+                    <table id="itemTable">
                         <c:forEach var="item" items="${itemList}">
                             <tr>
                                 <td>

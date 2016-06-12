@@ -180,4 +180,31 @@ public class ItemFactory {
                 ex.printStackTrace();
         }
     }
+    
+    public ArrayList<Item> searchItem(String text) {
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        text = "%"+text+"%";
+        try
+        {
+            Connection conn = DriverManager.getConnection(connectionString, "save", "1234");
+            String query = "select * from items " + 
+                           "where lower(itemname) like lower(?)";         
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setString(1, text);
+            ResultSet set = stmt.executeQuery();
+            while(set.next())
+            {
+                Item current = new Item( set.getInt("id"), set.getString("itemname"), set.getDouble("price"), set.getInt("quantity"), set.getString("category"), set.getString("description"), set.getString("img"), set.getInt("vendId"));
+                itemList.add(current);
+            }
+            
+            stmt.close();
+            conn.close();
+        }
+        catch(SQLException ex)
+        {ex.printStackTrace();}
+
+        return itemList;
+    }
 }

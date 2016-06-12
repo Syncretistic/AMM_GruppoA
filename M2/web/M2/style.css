@@ -61,6 +61,10 @@
 }
 @media all and (min-width: 480px) {
     
+    .input-wrap #search {
+       text-align:left;
+    }
+    
     #reviewPurchase {
         text-align: center;
         width: 300px;
